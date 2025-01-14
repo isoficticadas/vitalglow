@@ -1,0 +1,171 @@
+---
+const products = [
+  { 
+    src: "/images/prod-crystalin.webp", 
+    name: "CRYSTALIN", 
+    link: "https://www.crystalin.fit/" 
+  },
+  { 
+    src: "/images/prod-fixinol.webp", 
+    name: "FIXINOL", 
+    link: "https://www.fixinol.fit/" 
+  },
+  { 
+    src: "/images/prod-lipoxin.webp", 
+    name: "LIPOXIN", 
+    link: "https://www.lipoxin.fit/" 
+  },
+  { 
+    src: "/images/prod-lifetone.webp", 
+    name: "LIFETONE", 
+    link: "https://www.lifetone.fit/" 
+  },
+  { 
+    src: "/images/prod-maxiflex.webp", 
+    name: "MAXIFLEX", 
+    link: "https://www.maxiflex.fit/" 
+  },
+  { 
+    src: "/images/prod-ultraven.webp", 
+    name: "ULTRAVEN", 
+    link: "https://www.ultraven.fit/" 
+  },
+  { 
+    src: "/images/prod-andromax.webp", 
+    name: "ANDROMAX", 
+    link: "https://www.andromax.fit/" 
+  }
+];
+
+// ProductosSection.astro
+---
+
+<section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <!-- Título simple -->
+  <h2
+    class="text-center text-3xl md:text-4xl font-semibold mb-12 text-[#1B365D]"
+  >
+    Productos
+  </h2>
+
+  <!-- Cuadrícula de productos -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+    {products.map((product) => (
+      <div class="bg-white rounded-3xl shadow-lg p-6 flex flex-col items-center">
+        <div class="w-full aspect-square mb-4">
+          <img
+            src={product.src}
+            alt={product.name}
+            class="w-full h-full object-contain"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-neutral-dark text-lg font-medium text-center mb-2">
+          {product.name}
+        </h3>
+        <a
+          href={product.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-[#FF6100] text-white px-6 py-2 rounded-full hover:bg-[#E65600] transition-colors inline-block text-center"
+        >
+          Ver producto
+        </a>
+      </div>
+    ))}
+  </div>
+  
+  <!-- Beneficios de envío -->
+  <div class="w-full bg-[#FF6100] py-8 rounded-xl">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Envíos Gratuitos con mínimo de compra -->
+      <div class="flex items-center justify-center gap-4">
+        <div class="w-12 h-12 flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-12 h-12 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <title>Entrega a nivel nacional</title>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+            ></path>
+          </svg>
+        </div>
+        <div class="text-white">
+          <h3 class="text-neutral-dark text-lg font-semibold uppercase">
+            Entrega a nivel nacional
+          </h3>
+        </div>
+      </div>
+
+      <!-- Envíos Gratuitos general -->
+      <div class="flex items-center justify-center gap-4">
+        <div class="w-12 h-12 flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-12 h-12 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <title>Envios gratuitos</title>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+            ></path>
+          </svg>
+        </div>
+        <div class="text-white">
+          <h3 class="text-neutral-dark text-lg font-semibold uppercase">
+            Envios gratuitos
+          </h3>
+        </div>
+      </div>
+
+      <!-- Envíos 24/48h -->
+      <div class="flex items-center justify-center gap-4">
+        <div class="w-12 h-12 flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-12 h-12 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+          <title>Envios 24/48h</title>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <div class="text-white">
+          <h3 class="text-neutral-dark text-lg font-semibold uppercase">Envios 24/48h</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  img {
+    max-height: 250px;
+    width: auto;
+    margin: 0 auto;
+  }
+</style>
